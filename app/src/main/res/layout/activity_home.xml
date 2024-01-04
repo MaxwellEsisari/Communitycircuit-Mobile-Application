@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/comcirc"
+    android:backgroundTint="#80000000"
+    android:backgroundTintMode="src_over"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/beyond_boundaries_bridging_gaps_breaking_chains_ending_poverty"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:paddingStart="10dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginHorizontal="10dp"
+        tools:ignore="RtlSymmetry" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="10dp"
+        tools:ignore="RtlSymmetry">
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:background="@drawable/loginbtn"
+            android:backgroundTint="@color/back_login"
+
+            >
+
+        </Button>
+
+        <Button
+            android:id="@+id/btnsignup"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:layout_marginStart="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/signupbtn"
+            style="?android:attr/buttonBarButtonStyle">
+
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

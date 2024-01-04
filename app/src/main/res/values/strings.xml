@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">communitycircuit1</string>
+    <string name="communitycircuit">CommunityCircuit</string>
+    <string name="uniting_hearts_to_fight_poverty_your_contribution_their_liberation">Uniting Hearts to Fight Poverty: Your Contribution, Their Liberation.</string>
+    <string name="your_contribution_their_liberation">Your Contribution, Their Liberation</string>
+    <string name="sign_up">sign up</string>
+    <string name="login">login</string>
+    <string name="beyond_boundaries_bridging_gaps_breaking_chains_ending_poverty">Beyond Boundaries: Bridging Gaps, Breaking Chains, Ending Poverty.</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_email">Continue with Email</string>
+    <string name="log_in">Log in</string>
+</resources>
