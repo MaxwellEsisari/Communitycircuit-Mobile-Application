@@ -10,4 +10,6 @@
     <string name="continue_with_google">Continue with Google</string>
     <string name="continue_with_email">Continue with Email</string>
     <string name="log_in">Log in</string>
+    <string name="by_tapping_continue_iwith_facebook_google_you_agree_to_communitycircuit_s_terms_and_conditions">By tapping Continue iwith Facebook, Google, you agree to Communitycircuit\'s Terms and conditions</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
 </resources>

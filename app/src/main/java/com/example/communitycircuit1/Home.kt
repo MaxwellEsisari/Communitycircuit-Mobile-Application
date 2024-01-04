@@ -11,7 +11,7 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(binding.root)
 
         supportActionBar?.hide()
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN

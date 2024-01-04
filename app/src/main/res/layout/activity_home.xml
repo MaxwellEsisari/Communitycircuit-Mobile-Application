@@ -15,6 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/beyond_boundaries_bridging_gaps_breaking_chains_ending_poverty"
+        android:textFontWeight="@integer/material_motion_duration_long_1"
+
         android:textColor="@color/white"
         android:textSize="28sp"
         android:paddingStart="10dp"
@@ -40,6 +42,8 @@
             android:text="@string/login"
             android:textColor="@color/white"
             android:background="@drawable/loginbtn"
+            android:textFontWeight="@integer/material_motion_duration_long_1"
+
             android:backgroundTint="@color/back_login"
 
             >
@@ -55,6 +59,7 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:background="@drawable/signupbtn"
+            android:textFontWeight="@integer/material_motion_duration_long_1"
             style="?android:attr/buttonBarButtonStyle">
 
         </Button>
