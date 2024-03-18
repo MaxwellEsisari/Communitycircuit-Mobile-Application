@@ -10,6 +10,41 @@
     <string name="continue_with_google">Continue with Google</string>
     <string name="continue_with_email">Continue with Email</string>
     <string name="log_in">Log in</string>
-    <string name="by_tapping_continue_iwith_facebook_google_you_agree_to_communitycircuit_s_terms_and_conditions">By tapping Continue iwith Facebook, Google, you agree to Communitycircuit\'s Terms and conditions</string>
+
+    <string name="default_web_client_id" translatable="false">117787780601-42dt2eidd78gagdeel3ahj8mpsmu5e7t.apps.googleusercontent.com</string>
+
+    <string name="by_tapping_continue_iwith_facebook_google_you_agree_to_communitycircuit_s_terms_and_conditions">By tapping Continue with Facebook, Google, you agree to Communitycircuit\'s Terms and conditions</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="logoutButton">logoutButton</string>
+    <string name="get_started">Get Started</string>
+    <string name="are_you_ready_to_be_part_of_our_community">Are you ready to be part of our community?</string>
+    <string name="start_building_your_profile_right_away">Start building your profile right away</string>
+    <string name="skip">skip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="community_circuit_apps_streamline_crowdfunding_efforts_in_local_areas_offering_a_user_friendly_platform_for_community_members_to_share_and_support_initiatives_these_platforms_foster_collaboration_enabling_residents_to_address_communal_needs_and_drive_positive_transformations_within_their_neighborhoods_through_accessible_interfaces_and_collaborative_features_community_circuit_apps_empower_grassroots_initiatives_facilitating_impactful_change_at_the_local_level">Community Circuit apps streamline crowdfunding efforts in local areas, offering a user-friendly platform for community members to share and support initiatives. These platforms foster collaboration, enabling residents to address communal needs and drive positive transformations within their neighborhoods. Through accessible interfaces and collaborative features, Community Circuit apps empower grassroots initiatives, facilitating impactful change at the local level.</string>
+    <string name="account">Account</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="total_campaigns">Total Campaigns</string>
+    <string name="recently_viewed">Recently Viewed</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="about">About</string>
+    <string name="get_ready_to_start_your_campaign">Get ready to start your campaign</string>
+    <string name="my_campaign_title">my Campaign Title</string>
 </resources>

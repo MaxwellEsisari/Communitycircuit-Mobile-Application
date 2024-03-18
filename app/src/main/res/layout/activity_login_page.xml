@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginHorizontal="40dp"
+    android:layout_height="match_parent"
     tools:context=".LoginPage">
 
     <TextView
@@ -16,7 +15,10 @@
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_marginHorizontal="40dp"
+
+        tools:targetApi="p" />
 
     <Button
         android:id="@+id/btn_continue_with_email"
@@ -25,9 +27,13 @@
         android:layout_marginTop="40dp"
         android:text="@string/continue_with_email"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-
+        android:drawableStart="@drawable/baseline_mail_outline_24"
+        android:paddingStart="10dp"
         android:background="@drawable/login_continue_with_email"
-        />
+        android:layout_marginHorizontal="40dp"
+
+        tools:ignore="RtlSymmetry"
+        tools:targetApi="p" />
 
     <Button
         android:id="@+id/btn_continue_with_google"
@@ -36,9 +42,12 @@
         android:layout_marginTop="20dp"
         android:text="@string/continue_with_google"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-
+        android:drawableStart="@drawable/google"
+        android:paddingStart="10dp"
         android:background="@drawable/login_continue_with_email"
-        />
+        tools:ignore="RtlSymmetry"
+        android:layout_marginHorizontal="40dp"
+        tools:targetApi="p" />
     <Button
         android:id="@+id/btn_continue_with_facebook"
         android:layout_width="300dp"
@@ -46,9 +55,12 @@
         android:layout_marginTop="20dp"
         android:text="@string/continue_with_facebook"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-
+        android:drawableStart="@drawable/facebook"
+        android:paddingStart="10dp"
         android:background="@drawable/login_continue_with_email"
-        />
+        tools:targetApi="p"
+        android:layout_marginHorizontal="40dp"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:layout_width="match_parent"
@@ -57,34 +69,36 @@
         android:text="@string/by_tapping_continue_iwith_facebook_google_you_agree_to_communitycircuit_s_terms_and_conditions"
         android:textSize="14sp"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-
+        android:layout_marginHorizontal="40dp"
         android:textColor="#686767"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:targetApi="p" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
-        android:text="@string/don_t_have_an_account"
+        android:text="@string/already_have_an_account"
         android:paddingStart="60dp"
         android:textSize="17sp"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-
+        android:layout_marginHorizontal="40dp"
         android:textColor="#686767"
         android:textStyle="bold"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry"
+        tools:targetApi="p" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/sign_up"
+        android:text="@string/log_in"
         android:textFontWeight="@integer/material_motion_duration_long_1"
-
         android:paddingStart="120dp"
         android:textSize="17sp"
         android:textColor="#686767"
         android:textStyle="bold"
-        tools:ignore="RtlSymmetry" />
-
+        tools:ignore="RtlSymmetry"
+        android:layout_marginHorizontal="40dp"
+        tools:targetApi="p" />
 
 
 

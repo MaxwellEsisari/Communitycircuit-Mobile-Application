@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/communitycircuit"
+        android:textFontWeight="@integer/material_motion_duration_long_1"
         android:textSize="38sp"
         android:textColor="@color/brown"
-         />
+        tools:targetApi="p" />
 
 </LinearLayout>
