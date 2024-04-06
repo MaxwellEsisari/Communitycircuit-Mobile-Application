@@ -76,17 +76,27 @@ class LoginPage : AppCompatActivity() {
 
     private fun updateUI(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-        auth.signInWithCredential(credential).addOnCompleteListener {
-            if (it.isSuccessful) {
-                if (it.result?.additionalUserInfo?.isNewUser == true) {
-                    // User is signing in for the first time, redirect to MainHome
-                    redirectToMainHome()
+        auth.signInWithCredential(credential).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val user = FirebaseAuth.getInstance().currentUser
+                if (user != null) {
+                    val currentUserEmail = user.email
+                    val adminEmail = "maxwellesisari@gmail.com" // Replace with the actual admin's email
+                    if (currentUserEmail == adminEmail) {
+                        // Admin user
+                        startActivity(Intent(this, DeveloperActivity::class.java))
+                        finish() // Finish LoginActivity after redirection
+                    } else {
+                        // Regular user
+                        redirectToMainActivity2()
+                        finish() // Finish LoginActivity after redirection
+                    }
                 } else {
-                    // User is already signed in, redirect to MainActivity2
-                    redirectToMainActivity2()
+                    // Handle the case where the user is null
+                    Toast.makeText(this, "User is null", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }

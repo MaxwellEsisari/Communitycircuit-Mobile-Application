@@ -47,4 +47,24 @@
     <string name="about">About</string>
     <string name="get_ready_to_start_your_campaign">Get ready to start your campaign</string>
     <string name="my_campaign_title">my Campaign Title</string>
+    <string name="campaign_title">Campaign Title</string>
+    <string name="asterisis">*</string>
+    <string name="campaign_tagline">Campaign Tagline</string>
+    <string name="donate">Donate</string>
+    <string name="days_left">days Left</string>
+    <string name="follow_to_know_how_community_circuit_delivers_your_donation">Follow to know how community circuit delivers your donation</string>
+    <string name="share_a_meal">Share a Meal</string>
+    <string name="donate_now">Donate Now</string>
+    <string name="feed_a_family_in_need_within_your_community">Feed a family in Need within your community</string>
+    <string name="this_the_journey_to_your_donation">This the Journey to your Donation.</string>
+    <string name="commcircuit_about_us">Community circuit is more of a an organization that helps in improving the lives of community members. We believe in the concept of brotherhood and being there for each other and we try to improve lives through the public donations. We also do collaborate with other organizations within the community</string>
+    <string name="campaign_choose">There is a variety of need to choose from starting from individuals needs that they have posted. To the campaigns that the community circuit have initialized.</string>
+    <string name="_2_how_the_donations_are_disparsed">2. How the Donations are Disparsed</string>
+    <string name="donations_disparsed">We do have a center in the communities that we have implemented this and it acts as a collection center to the physical donations made. The funds sent are disparsed to the beneficiaries and our staffs ensure that they are used on the right purpose.</string>
+    <string name="_1_choose_where_to_help">1. Choose where to help</string>
+    <string name="get_to_know_us">Get to know us</string>
+    <string name="beneficiary">Beneficiary</string>
+    <string name="give_a_meal_to_a_needy_family">Give a meal to a needy family</string>
+    <string name="amount">Amount</string>
+    <string name="phone_number">Phone Number</string>
 </resources>

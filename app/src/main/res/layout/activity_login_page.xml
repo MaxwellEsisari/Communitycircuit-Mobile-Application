@@ -9,8 +9,18 @@
 
     <TextView
         android:layout_width="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/log_in"
         android:textColor="@color/black"
         android:textSize="35sp"
@@ -18,7 +28,7 @@
         android:textStyle="bold"
         android:layout_marginHorizontal="40dp"
 
-        tools:targetApi="p" />
+    tools:targetApi="p" />
 
     <Button
         android:id="@+id/btn_continue_with_email"
@@ -29,6 +39,7 @@
         android:textFontWeight="@integer/material_motion_duration_long_1"
         android:drawableStart="@drawable/baseline_mail_outline_24"
         android:paddingStart="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
         android:background="@drawable/login_continue_with_email"
         android:layout_marginHorizontal="40dp"
 
@@ -46,6 +57,7 @@
         android:paddingStart="10dp"
         android:background="@drawable/login_continue_with_email"
         tools:ignore="RtlSymmetry"
+        android:foreground="?android:attr/selectableItemBackground"
         android:layout_marginHorizontal="40dp"
         tools:targetApi="p" />
     <Button
@@ -57,6 +69,7 @@
         android:textFontWeight="@integer/material_motion_duration_long_1"
         android:drawableStart="@drawable/facebook"
         android:paddingStart="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
         android:background="@drawable/login_continue_with_email"
         tools:targetApi="p"
         android:layout_marginHorizontal="40dp"
@@ -77,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
-        android:text="@string/already_have_an_account"
+        android:text="Don't have an account"
         android:paddingStart="60dp"
         android:textSize="17sp"
         android:textFontWeight="@integer/material_motion_duration_long_1"
@@ -90,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/log_in"
+        android:text="Sign Up"
         android:textFontWeight="@integer/material_motion_duration_long_1"
         android:paddingStart="120dp"
         android:textSize="17sp"
@@ -99,6 +112,13 @@
         tools:ignore="RtlSymmetry"
         android:layout_marginHorizontal="40dp"
         tools:targetApi="p" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlayColor"
+        android:visibility="invisible" />
 
 
 
