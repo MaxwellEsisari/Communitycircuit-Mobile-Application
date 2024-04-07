@@ -67,4 +67,5 @@
     <string name="give_a_meal_to_a_needy_family">Give a meal to a needy family</string>
     <string name="amount">Amount</string>
     <string name="phone_number">Phone Number</string>
+    <string name="admin_side">Admin Side</string>
 </resources>
