@@ -68,4 +68,10 @@
     <string name="amount">Amount</string>
     <string name="phone_number">Phone Number</string>
     <string name="admin_side">Admin Side</string>
+    <string name="textbeneficiary">textBeneficiary</string>
+    <string name="event_title">Event Title</string>
+    <string name="the_event_title">The event title</string>
+    <string name="event_venue">Event Venue</string>
+    <string name="event">Event venue</string>
+    <string name="upload_a_square_image_to_represent_your_event">Upload a Square Image to represent your event</string>
 </resources>

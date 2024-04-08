@@ -28,6 +28,9 @@ class LoginPage : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        binding.btnContinueWithEmail.setOnClickListener{
+            startActivity(Intent(this,MainActivity2::class.java))
+        }
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(default_web_client_id))
             .requestEmail()
