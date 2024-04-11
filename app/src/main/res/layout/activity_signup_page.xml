@@ -20,7 +20,7 @@
         tools:targetApi="p" />
 
     <Button
-        android:id="@+id/btn_continue_with_email"
+        android:id="@+id/btnEmail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
