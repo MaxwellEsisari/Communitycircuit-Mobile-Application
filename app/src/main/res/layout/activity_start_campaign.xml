@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".StartCampaign">
+
+    <!-- Campaign Title -->
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:drawableLeftCompat="@drawable/baseline_arrow_back_ios_24" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/campaign_title"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asterisis"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="20sp" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/editTextCampaignTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="My Campaign Title"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_text_background"
+        tools:ignore="RtlSymmetry" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/campaign_tagline"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asterisis"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_gravity="center_vertical"
+
+        android:textSize="20sp" />
+</LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextCampaignTagline"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Campaign Tagline" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Campaign Beneficiary"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:inputType="number"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/asterisis"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_gravity="center_vertical"
+
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextBeneficiary"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Beneficiary" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beneficiary Number"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:inputType="number"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/asterisis"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_gravity="center_vertical"
+
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="254......." />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Campaign Card Image "
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="1dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/asterisis"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_gravity="center_vertical"
+
+            android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Upload a Square Image to represent your campaign"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+
+    <!-- Campaign Card Image -->
+    <ImageView
+        android:id="@+id/imgAdd"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/image"
+        app:layout_constraintStart_toStartOf="@+id/edtPhone"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
+    <Button
+        android:id="@+id/buttonChooseImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_continue_with_email"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
+        android:text="Choose Image" />
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_continue_with_email"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
+        android:text="send data"
+        android:visibility="invisible"
+
+        />
+
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Category "
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:hint="By selecting the category we will be able to know the nature of yor campaign"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Campaign Category Dropdown -->
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edit_text_background"
+
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Campaigns Duration "
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="1dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="20dp"
+
+        android:hint="The campaigns have a maximum of 60 days from which it will expire but when the target is achieved the campaign will also come to halt"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <!-- Campaign Duration -->
+    <EditText
+        android:id="@+id/editTextCampaignDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Campaign Duration" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Campaigns Duration "
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="1dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginHorizontal="20dp"
+
+        android:hint="This is critical in determining whether to approve the campaign or not"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <!-- Campaign Duration -->
+    <EditText
+        android:id="@+id/editTextAboutCampaign"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Tell us more about the fundraising..." />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/login_continue_with_email"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Submit" />
+
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/overlayColor"
+        android:visibility="invisible" />
+
+</LinearLayout>
+</ScrollView>

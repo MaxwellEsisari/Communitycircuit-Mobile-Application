@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="circular">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="MyEditTextStyle">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <!-- Add other attributes here as needed -->
+    </style>
+</resources>

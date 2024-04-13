@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Horizontal ScrollView -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- LinearLayout to hold horizontal views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- CardView item -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/textBeneficiary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/textbeneficiary"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textAllCaps="true"
+                        android:textStyle="normal"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imgItem"
+                        android:layout_width="350dp"
+                        android:layout_height="250dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/comcirc" />
+
+                    <TextView
+                        android:id="@+id/tvCampaign"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="name"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvIdItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="id"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="4dp"
+                        android:visibility="invisible"/>
+
+                    <!-- Progress View -->
+                    <ProgressBar
+                        android:id="@+id/progressBarContribution0001"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="100"
+                        android:progress="50" />
+
+                    <!-- Progress Text -->
+                    <TextView
+                        android:id="@+id/campa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="50% Funded"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="4dp" />
+                    <!-- Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_horizontal">
+
+                        <!-- Approve Button -->
+                        <Button
+                            android:id="@+id/btnApprove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Approve"
+                            android:background="#68AF4C"
+                            android:layout_marginEnd="16dp"/>
+
+                        <!-- Decline Button -->
+                        <Button
+                            android:id="@+id/btnDecline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#F80228"
+
+                            android:text="Decline"/>
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Add more CardView items here if needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+</LinearLayout>
