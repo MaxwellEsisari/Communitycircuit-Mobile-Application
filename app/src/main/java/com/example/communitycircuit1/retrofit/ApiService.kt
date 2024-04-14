@@ -8,6 +8,7 @@ interface ApiService {
     @GET("/pay")
     fun pay(
         @Query("amount") amount: String,
-        @Query("phone") phone: String
+        @Query("phone") phone: String,
+        @Query("campaignBeneficiary") campaignBeneficiary: String
     ): Call<ApiResponse>
 }
