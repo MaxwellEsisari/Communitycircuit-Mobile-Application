@@ -2,6 +2,7 @@ package com.example.communitycircuit1.fragments
 
 import RvContactsAdapter
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,8 +12,8 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.communitycircuit1.AdminPayments
 import com.example.communitycircuit1.MainActivity5delivery
-import com.example.communitycircuit1.Notification
 import com.example.communitycircuit1.R
 import com.example.communitycircuit1.databinding.FragmentHomeBinding
 import com.example.communitycircuit1.models.ApiResponse
@@ -23,6 +24,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.example.communitycircuit1.models.Payment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,6 +36,7 @@ class HomeFragment : Fragment() {
       private lateinit var contactsList:ArrayList<Contacts>
       private lateinit var firebaseRef : DatabaseReference
       private lateinit var adapter: RvContactsAdapter
+      private val campaignTotalMap: MutableMap<String, Double> = mutableMapOf()
 
 
 
@@ -51,7 +54,7 @@ class HomeFragment : Fragment() {
         firebaseRef = FirebaseDatabase.getInstance().getReference("contacts")
         contactsList = arrayListOf()
         binding.notificationIcon?.setOnClickListener {
-            val intent = Intent(requireContext(), Notification::class.java)
+            val intent = Intent(requireContext(), AdminPayments::class.java)
             startActivity(intent)
 
         }
@@ -64,7 +67,7 @@ class HomeFragment : Fragment() {
 
 
         binding.shareMeal.setOnClickListener {
-            showDonationDialog()
+            showDonationDialog(requireContext(), "")
         }
 
 
@@ -74,7 +77,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    fun showDonationDialog() {
+    private fun showDonationDialog(context: Context, campaignBeneficiary: String) {
         val dialogView = layoutInflater.inflate(R.layout.dialog_donate_layout, null)
         val editTextPhoneNumber = dialogView.findViewById<EditText>(R.id.editTextPhoneNumber)
         val editTextAmount = dialogView.findViewById<EditText>(R.id.editTextAmount)
@@ -86,7 +89,7 @@ class HomeFragment : Fragment() {
                 val amount = editTextAmount.text.toString()
 
                 // Call your API using Retrofit
-                makeDonation(phoneNumber, amount)
+                makeDonation(amount,phoneNumber, campaignBeneficiary, context)
 
                 dialog.dismiss()
             }
@@ -96,9 +99,9 @@ class HomeFragment : Fragment() {
             .show()
     }
 
-    private fun makeDonation(amount: String, phone: String) {
+    private fun makeDonation(phone: String, amount: String, campaignBeneficiary: String, context: Context) {
         val apiService = RetrofitClient.apiService
-        val call = apiService.pay(phone,amount )
+        val call = apiService.pay(phone, amount, campaignBeneficiary)
         call.enqueue(object : Callback<ApiResponse> {
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                 if (response.isSuccessful) {
@@ -136,11 +139,23 @@ class HomeFragment : Fragment() {
                             }
                             it.remainingDays = "$remainingDays Days Left"
                             contactsList.add(contacts)
+
+                            val payment = contactSnap.getValue(Payment::class.java)
+                            val beneficiary = it.campaignBeneficiary ?: "Unknown"
+                            val currentTotal = campaignTotalMap[beneficiary] ?: 0.0
+
+                            // Access the amount property from the Payment model
+                            val amountString = payment?.amount ?: "0.0"
+                            val amount = amountString.toDoubleOrNull() ?: 0.0
+
+                            // Ensure amount is a valid Double before proceeding
+                            val total = currentTotal + amount
+                            campaignTotalMap[beneficiary] = total
                         }
                     }
                 }
                 binding.root.post {
-                    setupRecyclerView(contactsList) // Update RecyclerView adapter
+                    setupRecyclerView(contactsList, campaignTotalMap) // Update RecyclerView adapter
                 }
             }
 
@@ -165,8 +180,11 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun setupRecyclerView(contactsList: ArrayList<Contacts>) {
-        adapter = RvContactsAdapter(contactsList)
+    private fun setupRecyclerView(
+        contactsList: ArrayList<Contacts>,
+        campaignTotalMap: MutableMap<String, Double>
+    ) {
+        adapter = RvContactsAdapter(contactsList, this.campaignTotalMap)
         binding.rvContacts.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)

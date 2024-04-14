@@ -119,11 +119,11 @@
 
                         <!-- Progress Text -->
                         <TextView
-                            android:id="@+id/campa"
+                            android:id="@+id/textBeneficiaryTotal"
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="50% Funded"
+                            android:text="Total Amount Paid: "
                             android:textSize="14sp"
                             android:textColor="@color/black"
                             android:layout_marginTop="5dp" />

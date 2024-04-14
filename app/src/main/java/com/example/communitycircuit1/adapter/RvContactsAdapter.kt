@@ -1,17 +1,26 @@
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.communitycircuit1.MainActivity3
+import com.example.communitycircuit1.R
 import com.example.communitycircuit1.databinding.RvContactsItemBinding
-import com.example.communitycircuit1.fragments.HomeFragment
+import com.example.communitycircuit1.models.ApiResponse
 import com.example.communitycircuit1.models.Contacts
+import com.example.communitycircuit1.retrofit.RetrofitClient
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class RvContactsAdapter(private var contactList: ArrayList<Contacts>) :
+class RvContactsAdapter(private var contactList: ArrayList<Contacts>,private val campaignTotalMap: Map<String, Double>) :
     RecyclerView.Adapter<RvContactsAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: RvContactsItemBinding) :
@@ -37,10 +46,12 @@ class RvContactsAdapter(private var contactList: ArrayList<Contacts>) :
             textCampaignAbout.text = currentItem.campaignAbout ?: ""
             textViewRemainingDays.text = currentItem.remainingDays ?: ""
 
-            // Set click listener for the donate button
+            // Calculate and display total amount paid for the beneficiary
+            val beneficiaryTotalAmount = campaignTotalMap[currentItem.campaignBeneficiary] ?: 0.0
+            textBeneficiaryTotal.text = "Total Amount Paid: $beneficiaryTotalAmount"
+
             shareMeal.setOnClickListener {
-                val homeFragment = HomeFragment()
-                homeFragment.showDonationDialog()
+                showDonationDialog(holder.itemView.context, currentItem.campaignBeneficiary ?: "")
             }
 
 
@@ -67,6 +78,48 @@ class RvContactsAdapter(private var contactList: ArrayList<Contacts>) :
             }
         }
     }
+
+    private fun showDonationDialog(context: Context, campaignBeneficiary: String) {
+        val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_donate_layout, null)
+        val editTextPhoneNumber = dialogView.findViewById<EditText>(R.id.editTextPhoneNumber)
+        val editTextAmount = dialogView.findViewById<EditText>(R.id.editTextAmount)
+
+        AlertDialog.Builder(context)
+            .setView(dialogView)
+            .setPositiveButton("Donate") { dialog, _ ->
+                val amount = editTextAmount.text.toString()
+                val phoneNumber = editTextPhoneNumber.text.toString()
+
+
+                makeDonation(amount,phoneNumber, campaignBeneficiary, context)
+
+                dialog.dismiss()
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun makeDonation(phone: String, amount: String, campaignBeneficiary: String, context: Context) {
+        val apiService = RetrofitClient.apiService
+        val call = apiService.pay(phone, amount, campaignBeneficiary)
+        call.enqueue(object : Callback<ApiResponse> {
+            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                if (response.isSuccessful) {
+                    val message = response.body()?.message ?: "Donation Successful"
+                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context, "Failed to make donation", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                Toast.makeText(context, "Failed to make donation: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
 
     fun searchDataList(searchList: List<Contacts>) {
         contactList.clear()
